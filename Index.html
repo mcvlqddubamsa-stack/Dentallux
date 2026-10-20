@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8fbfc">
+<meta name="description" content="DENTAL LUX — современная стоматология. Услуги, команда и запись на приём.">
+<title>DENTAL LUX — стоматология нового поколения</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#102b45;
+  --navy2:#173f5d;
+  --teal:#24c8c5;
+  --ink:#173047;
+  --muted:#6e8190;
+  --paper:#f7fbfc;
+  --line:#e2edf0;
+  --shadow:0 20px 60px #123b5012;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+.section{padding:100px 0}
+h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-.04em}
+h2{font-size:clamp(32px,4vw,49px);color:var(--navy);margin:14px 0 18px}
+h3{color:var(--navy)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.17em;font-weight:800;color:#168e97;text-transform:uppercase}
+.eyebrow:before{content:'';width:24px;height:2px;background:var(--teal)}
+.section-lead{max-width:600px;color:var(--muted)}
+.btn{border:0;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:14px;font-weight:700;font-size:14px;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{color:#062c3d;background:linear-gradient(110deg,#8ff1e8,#31d0ca);box-shadow:0 10px 28px #30c9c044}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-outline{border:1px solid #cbdde2;color:var(--navy);background:#ffffffb8}
+.site-header{position:sticky;top:0;z-index:50;background:#f9fcfdeb;backdrop-filter:blur(18px);border-bottom:1px solid #dce9ed}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.09em;color:var(--navy)}
+.brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,#d6fbf5,#6ddbd7);display:grid;place-items:center;font-size:23px}
+.brand small{display:block;font:600 8px 'DM Sans';letter-spacing:.22em;color:#7a929e}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:600;color:#526b7c}
+.nav-links a:hover{color:#129ca3}
+.menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:12px;padding:10px;color:var(--navy)}
+.hero{position:relative;overflow:hidden;padding:55px 0 65px;background:radial-gradient(ellipse at 75% 40%,#d7f7f5,#edfafa 28%,transparent 59%),linear-gradient(120deg,#f9fcfc,#f1f9fa)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:26px;min-height:490px}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid #cde9e8;background:#ffffffa8;border-radius:30px;color:#288c92;font-size:10px;letter-spacing:.15em;font-weight:800}
+.pulse{width:7px;height:7px;border-radius:50%;background:#28c8be;box-shadow:0 0 0 5px #28c8be22}
+.hero h1{font-size:clamp(42px,5.4vw,69px);margin:23px 0 20px;color:var(--navy)}
+.hero h1 span{color:#16aeb0}
+.hero-copy p{font-size:17px;max-width:490px;color:#637b8b;line-height:1.8;margin-bottom:28px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.hero-visual{min-height:440px;position:relative;display:grid;place-items:center}
+.visual-glow{position:absolute;width:310px;height:310px;border-radius:50%;background:#8deae4;filter:blur(75px);opacity:.5}
+.orbit{position:absolute;width:340px;height:340px;border:1px solid #48cfc75c;border-radius:50%;transform:rotateX(65deg);animation:orbit 18s linear infinite}
+.orbit:after{content:'';position:absolute;inset:-24px;border:1px dashed #2ac5c354;border-radius:50%}
+.orbit-two{width:280px;height:280px;animation:orbit 23s linear infinite reverse}
+.tooth-art{width:min(330px,75%);z-index:1;filter:drop-shadow(0 28px 30px #2d7d8c2b);animation:float 5s ease-in-out infinite}
+.tooth-art svg{width:100%;height:auto}
+.float-card{position:absolute;z-index:3;padding:13px 16px;border:1px solid #ffffffc9;border-radius:17px;background:#ffffffd9;backdrop-filter:blur(15px);box-shadow:0 14px 35px #12435714;display:flex;align-items:center;gap:10px}
+.float-card.one{left:0;top:20%}
+.float-card.two{right:0;bottom:19%}
+.mini-icon{width:37px;height:37px;border-radius:12px;background:#e1f9f5;display:grid;place-items:center;color:#179da0;font-size:20px}
+.float-card strong{display:block;font-size:12px;color:var(--navy)}
+.float-card small{display:block;color:#78909b;font-size:10px}
+.hero-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #dcebed;padding-top:22px;margin-top:18px;color:#78909b;font-size:11px}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:25px}
+.benefit-card{padding:23px 20px;border:1px solid #e0ecef;background:#ffffffc9;border-radius:20px;transition:.3s;box-shadow:0 8px 24px #1c51600a}
+.benefit-card:hover,.service-card:hover,.doctor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.benefit-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:15px;background:#e5faf7;color:#159ca0;font-size:23px;margin-bottom:17px}
+.benefit-card h3{font-size:16px;margin-bottom:8px}
+.benefit-card p{font-size:12px;color:var(--muted);margin:0}
+.services{background:white}
+.services-top{display:flex;align-items:end;justify-content:space-between;gap:24px}
+.section-head{margin-bottom:42px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.service-card{overflow:hidden;border:1px solid #e5eef0;border-radius:21px;background:#fff;transition:.3s}
+.service-image{height:155px;position:relative;overflow:hidden;background:#d9f3f0}
+.service-image img{height:100%;transition:transform .6s}
+.service-card:hover img{transform:scale(1.06)}
+.service-number{position:absolute;top:12px;left:12px;background:#ffffffd9;border-radius:10px;padding:5px 9px;color:#2c6876;font-size:10px;font-weight:800}
+.service-body{padding:18px}
+.service-body h3{font-size:17px;margin:0 0 9px}
+.service-body p{color:var(--muted);font-size:12px;line-height:1.65;min-height:40px}
+.service-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #edf2f3;padding-top:14px}
+.price{font-size:11px;color:#8b9da6}
+.price strong{display:block;font-size:14px;color:#176d78}
+.round-arrow{width:35px;height:35px;border:0;border-radius:12px;background:#e8f9f7;color:#178f96;font-size:20px}
+.doctors{background:linear-gradient(180deg,#f6fbfc,#edf8f8)}
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.doctor-card{background:#fff;border:1px solid #e2edef;border-radius:24px;overflow:hidden;transition:.3s}
+.doctor-photo{height:275px;overflow:hidden;background:#dcefed;position:relative}
+.doctor-photo img{height:100%;transition:transform .5s}
+.doctor-card:hover img{transform:scale(1.04)}
+.sample-tag{position:absolute;left:14px;top:14px;background:#ffffffdf;border-radius:8px;padding:6px 9px;font-size:9px;font-weight:800;color:#587584}
+.doctor-info{padding:21px}
+.doctor-info h3{font-size:20px;margin-bottom:6px}
+.doctor-info p{color:#67818e;font-size:13px}
+.doctor-meta{border-top:1px solid #edf2f3;padding-top:13px;font-size:11px;color:#8196a0}
+.about{background:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-image-wrap{position:relative;padding:0 22px 22px 0}
+.about-image{height:440px;border-radius:30px;overflow:hidden;background:#d8eeeb}
+.about-image img{height:100%}
+.about-stamp{position:absolute;right:0;bottom:0;background:white;box-shadow:var(--shadow);border-radius:20px;padding:18px}
+.about-stamp strong{font:800 24px Manrope;color:#119ba0;display:block}
+.about-copy>p{color:var(--muted);line-height:1.85}
+.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.about-point{border:1px solid #e3edef;background:#f8fcfc;border-radius:15px;padding:14px}
+.about-point strong{display:block;font-size:12px}
+.about-point span{font-size:10px;color:#81939d}
+.reviews{background:var(--navy);color:white;overflow:hidden}
+.reviews h2{color:white}
+.reviews .section-lead{color:#b2c6d1}
+.review-top{display:flex;align-items:end;justify-content:space-between;gap:20px}
+.review-controls{display:flex;gap:9px}
+.review-controls button{width:43px;height:43px;border-radius:14px;border:1px solid #ffffff30;background:#ffffff0c;color:white;font-size:20px}
+.review-window{overflow:hidden}
+.review-track{display:flex;gap:17px;transition:transform .45s ease}
+.review-card{flex:0 0 calc((100% - 34px)/3);padding:25px;border:1px solid #ffffff20;background:#ffffff0b;border-radius:22px;min-height:240px}
+.demo-note{font-size:10px;color:#a9d4d5;margin-bottom:15px}
+.stars{color:#79e2d9;letter-spacing:3px;font-size:14px}
+.review-card blockquote{font-size:14px;line-height:1.8;color:#d9e5ea;margin:15px 0 22px}
+.review-person{display:flex;align-items:center;gap:11px}
+.review-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#b7f4ed,#478c9b);color:#123d50;display:grid;place-items:center;font-weight:800}
+.booking{padding:90px 0;background:radial-gradient(ellipse at 80% 20%,#d4f7f3,transparent 45%),#f3fafb}
+.booking-panel{display:grid;grid-template-columns:.85fr 1.15fr;background:#fff;border:1px solid #deecee;border-radius:30px;overflow:hidden;box-shadow:0 25px 70px #174b5a10}
+.booking-aside{padding:40px;background:linear-gradient(150deg,#12344f,#0e5266);color:white}
+.booking-aside h2{color:white;font-size:36px}
+.booking-aside p{color:#c2d7df;font-size:14px;line-height:1.8}
+.messenger-link{display:inline-flex;border:1px solid #ffffff4a;border-radius:13px;padding:12px 15px;margin-top:20px;font-size:12px;font-weight:700;color:white}
+.booking-form{padding:40px}
+.booking-form h3{font-size:24px;margin-bottom:7px}
+.booking-form>p{font-size:12px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:700;color:#496273}
+.field input,.field select{width:100%;border:1px solid #dce8eb;background:#fbfdfd;border-radius:12px;padding:13px;outline:none;color:var(--navy);min-width:0}
+.field input:focus,.field select:focus{border-color:#43c9c4;box-shadow:0 0 0 4px #43c9c41c}
+.field-error{font-size:10px;color:#c23b4b}
+.consent{display:flex;align-items:flex-start;gap:9px;color:#748a95;font-size:10px;margin:17px 0}
+.form-submit{width:100%}
+.form-message{display:none;margin-top:14px;padding:12px;border-radius:12px;background:#fff7e7;border:1px solid #f0d9a8;color:#795b20;font-size:12px}
+.form-message.show{display:block}
+.contacts{background:white}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px}
+.contact-list{display:grid;gap:12px;margin-top:25px}
+.contact-item{padding:16px;border:1px solid #e4edef;border-radius:17px}
+.contact-item strong{display:block;font-size:13px}
+.contact-item span{font-size:12px;color:#748995}
+.map-placeholder{min-height:350px;border-radius:27px;background:linear-gradient(135deg,#e0f4f2,#f4f8f7);border:1px solid #dcebec;display:grid;place-items:center;text-align:center;padding:30px}
+.footer{background:#0c263d;color:#b8cbd4;padding:42px 0 22px}
+.footer-top{display:flex;justify-content:space-between;gap:25px;padding-bottom:30px}
+.footer-note{font-size:11px;max-width:330px;color:#93acb8;margin-top:16px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:12px}
+.footer-bottom{border-top:1px solid #ffffff1c;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#8099a7}
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px;background:#08243bc2;backdrop-filter:blur(9px)}
+.modal.open{display:grid}
+.modal-card{width:min(560px,100%);background:white;border-radius:25px;padding:30px;position:relative}
+.modal-close{position:absolute;right:15px;top:15px;border:1px solid var(--line);border-radius:12px;background:white;font-size:22px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:110;background:var(--navy);color:white;border-radius:12px;padding:14px 18px;display:none;max-width:90%;font-size:13px}
+.toast.show{display:block}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes orbit{to{transform:rotateX(65deg) rotateZ(338deg)}}
+@media(max-width:1000px){
+.nav-links{gap:12px}.service-grid{grid-template-columns:repeat(2,1fr)}.benefit-grid{grid-template-columns:repeat(2,1fr)}
+.doctors-grid{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr 1fr}
+.about-grid{gap:30px}.booking-panel{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+.container{width:min(100% - 30px,600px)}.section{padding:70px 0}
+.nav{min-height:70px}.menu-toggle{display:block}
+.nav-links{display:none;position:absolute;left:15px;right:15px;top:70px;padding:20px;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+.nav-links.open{display:flex}.nav-actions .btn{display:none}
+.hero{padding-top:35px}.hero-grid{grid-template-columns:1fr;gap:0}
+.hero h1{font-size:clamp(40px,12vw,58px)}.hero-copy p{font-size:15px}
+.hero-visual{min-height:340px}.orbit{width:270px;height:270px}.orbit-two{width:220px;height:220px}
+.float-card.one{left:0;top:12%}.float-card.two{right:0;bottom:10%}
+.benefit-grid{grid-template-columns:1fr 1fr}.services-top,.review-top{display:block}
+.service-grid{grid-template-columns:1fr 1fr;gap:12px}.service-image{height:125px}.service-body{padding:13px}
+.doctors-grid{grid-template-columns:1fr}.doctor-photo{height:300px}
+.about-grid{grid-template-columns:1fr}.about-image{height:330px}.about-points{grid-template-columns:1fr 1fr}
+.review-card{flex-basis:100%}.booking-aside,.booking-form{padding:25px}
+.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+.contact-grid{grid-template-columns:1fr}.map-placeholder{min-height:280px}
+.footer-top{display:block}.footer-links{margin-top:25px}
+}
+@media(max-width:400px){.service-grid,.benefit-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.float-card{padding:9px}.float-card strong{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home"><span class="brand-mark">✧</span><span>DENTAL LUX<small>SMILE WITH CONFIDENCE</small></span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Главная</a><a href="#services">Услуги</a><a href="#doctors">Врачи</a><a href="#about">О клинике</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <div class="nav-actions"><a href="#booking" class="btn btn-primary">Записаться ↗</a><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Открыть меню">☰</button></div>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="pulse"></span> СТОМАТОЛОГИЯ НОВОГО ПОКОЛЕНИЯ</div>
+        <h1>Улыбка, которой хочется <span>гордиться.</span></h1>
+        <p>Современная стоматология, бережное отношение и персональный подход к каждой улыбке.</p>
+        <div class="hero-buttons"><a class="btn btn-primary" href="#booking">Записаться на приём ↗</a><a class="btn btn-outline" href="#services">Наши услуги ↓</a></div>
+      </div>
+      <div class="hero-visual" id="heroVisual">
+        <div class="visual-glow"></div><div class="orbit"></div><div class="orbit orbit-two"></div>
+        <div class="tooth-art">
+          <svg viewBox="0 0 340 380" role="img" aria-label="Объёмная иллюстрация белого зуба">
+            <defs>
+              <linearGradient id="tooth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#f7ffff"/><stop offset=".75" stop-color="#c7eeee"/><stop offset="1" stop-color="#fff"/></linearGradient>
+              <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d4f7f5"/><stop offset="1" stop-color="#fff"/></linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+            <ellipse cx="170" cy="333" rx="85" ry="17" fill="#42bdb8" opacity=".15" filter="url(#glow)"/>
+            <path d="M91 72 C58 45 28 76 37 121 C45 163 70 183 78 224 C84 259 89 304 113 311 C138 318 142 256 165 236 C187 217 199 279 220 304 C243 333 263 290 267 250 C272 205 294 170 303 126 C314 76 279 45 247 67 C221 84 207 71 179 65 C146 57 119 91 91 72Z" fill="#53cfc9" opacity=".28" filter="url(#glow)"/>
+            <path d="M91 72 C58 45 28 76 37 121 C45 163 70 183 78 224 C84 259 89 304 113 311 C138 318 142 256 165 236 C187 217 199 279 220 304 C243 333 263 290 267 250 C272 205 294 170 303 126 C314 76 279 45 247 67 C221 84 207 71 179 65 C146 57 119 91 91 72Z" fill="url(#tooth)" stroke="#c4e8e8" stroke-width="2"/>
+            <path d="M58 99 C71 73 88 78 108 91 C128 103 143 87 165 84" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+            <path d="M73 143 C83 188 104 207 109 244" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+            <path d="M229 104 C254 91 275 108 269 138 C263 165 248 186 243 212" fill="none" stroke="#a9dedd" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+            <circle cx="90" cy="47" r="4" fill="#32c9c3"/><circle cx="284" cy="201" r="3" fill="#32c9c3"/><circle cx="66" cy="251" r="3" fill="#32c9c3"/>
+          </svg>
+        </div>
+        <div class="float-card one"><div class="mini-icon">✦</div><div><strong>Бережный подход</strong><small>Комфорт на каждом этапе</small></div></div>
+        <div class="float-card two"><div class="mini-icon">♡</div><div><strong>В центре внимания — вы</strong><small>Индивидуальный план</small></div></div>
+      </div>
+    </div>
+    <div class="hero-bottom"><span>✧ <strong>Современный подход</strong></span><span>Комфортная атмосфера</span><span>Понятный план лечения</span></div>
+  </div>
+</section>
+<section class="container">
+  <div class="benefit-grid">
+    <article class="benefit-card reveal"><div class="benefit-icon">✧</div><h3>Современное оборудование</h3><p>Технологии и инструменты подбираются под задачи лечения.</p></article>
+    <article class="benefit-card reveal"><div class="benefit-icon">♡</div><h3>Внимание к пациенту</h3><p>Объясняем этапы лечения и отвечаем на вопросы.</p></article>
+    <article class="benefit-card reveal"><div class="benefit-icon">₽</div><h3>Прозрачная стоимость</h3><p>Обсуждение стоимости до начала процедур.</p></article>
+    <article class="benefit-card reveal"><div class="benefit-icon">✓</div><h3>Индивидуальный план</h3><p>Рекомендации с учётом ситуации конкретного пациента.</p></article>
+  </div>
+</section>
+<section class="section services" id="services"><div class="container">
+  <div class="services-top"><div class="section-head"><span class="eyebrow">НАПРАВЛЕНИЯ</span><h2>Забота о вашей у
